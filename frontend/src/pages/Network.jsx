@@ -5,7 +5,9 @@ import { authDataContext } from "../context/AuthContext";
 import profile from "../assets/Images/profile.png";
 import {IoIosCheckmarkCircleOutline} from "react-icons/io";
 import { RxCrossCircled } from "react-icons/rx";
+import io from "socket.io-client"
 
+const socket =io("https://linkedin-backend-tpca.onrender.com")
 const Network = () => {
   let { serverUrl } = useContext(authDataContext);
   let [connections, setConnections] = useState([]);
