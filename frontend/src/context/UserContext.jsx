@@ -4,7 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { io } from "socket.io-client";
 
-export let socket = io("https://linkedin-backend-tpca.onrender.com");
+export let socket = io("https://backend-linkedin-pe2v.onrender.com");
 
 export const userDataContext = createContext();
 const UserContext = ({children}) => {
