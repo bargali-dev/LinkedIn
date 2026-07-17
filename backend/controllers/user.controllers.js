@@ -80,7 +80,7 @@ export const search = async(req,res)=>{
         { firstName: { $regex: query, $options: "i" } },
         { lastName: { $regex: query, $options: "i" } },
         { userName: { $regex: query, $options: "i" } },
-        { Skills: {$in:[query]}},
+        { skill: {$in:[query]}},
       ],
     })
     return res.status(200).json(users)
