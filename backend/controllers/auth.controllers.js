@@ -26,11 +26,11 @@ export const signUp = async (req, res) => {
       password: hassedPassword,
     });
     let token = await genToken(user._id);
-    res.cookie("token", token, {
+      res.cookie("token", token, {
       httpOnly: true,
+      secure: true,
+      sameSite: "none",
       maxAge: 7 * 24 * 60 * 60 * 1000,
-      sameSite: "strict",
-      secure: process.env.NODE_ENVIRONMENT==="production",
     });
     return res.status(201).json(user)
   } catch (error) {
