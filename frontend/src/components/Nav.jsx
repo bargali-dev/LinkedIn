@@ -40,6 +40,7 @@ const Nav = () => {
      );
 
      setSearchData(result.data);
+     console.log(searchData);
    } catch (error) {
      console.log(error);
      setSearchData([]);
@@ -47,7 +48,7 @@ const Nav = () => {
  };
 useEffect(() => {
   if (!searchInput.trim()) {
-    setSearchData([]);
+    setSearchData([searchInput]);
     return;
   }
 
