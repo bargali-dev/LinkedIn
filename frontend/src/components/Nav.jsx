@@ -48,7 +48,7 @@ const Nav = () => {
  };
 useEffect(() => {
   if (!searchInput.trim()) {
-    setSearchData([searchInput]);
+    setSearchData([]);
     return;
   }
 
@@ -74,7 +74,7 @@ useEffect(() => {
           </div>
         )}
         {searchData.length > 0 && (
-          <div className="absolute top-[90px] h-[500px] min-h-[100px] left-[0px] lg:left-[20px]  bg-white shadow-lg w-[100%] lg:w-[700px] flex flex-col gap-[20px] p-[20px] overflow-auto">
+          return (<div className="absolute top-[90px] h-[500px] min-h-[100px] left-[0px] lg:left-[20px]  bg-white shadow-lg w-[100%] lg:w-[700px] flex flex-col gap-[20px] p-[20px] overflow-auto">
             {searchData.map((search) => {
               <div
                 className="flex gap-[20px] items-center border-b-2 border-b-gray-300 p-[10px] hover:bg-gray-200 cursor-pointer rounded-lg"
@@ -95,7 +95,7 @@ useEffect(() => {
                     {search.headline}
                   </div>
                 </div>
-              </div>;
+              </div>)
             })}
           </div>
         )}
